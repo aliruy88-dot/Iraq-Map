@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<meta content="mobile_tab" name="shell-type"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#f8fafd",
+            "surface-dim": "#eef3fa",
+            "surface-card": "#ffffff",
+            "primary": "#0066ff",
+            "primary-hover": "#0055d6",
+            "primary-light": "#e8f1ff",
+            "accent-cyan": "#00d2ff",
+            "brand-emerald": "#10b981",
+            "brand-amber": "#f59e0b",
+            "on-surface": "#0f172a",
+            "on-surface-subtle": "#64748b",
+            "outline-soft": "rgba(226, 232, 240, 0.8)",
+          },
+          fontFamily: {
+            sans: ['"IBM Plex Sans Arabic"', '"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          boxShadow: {
+            'glow-primary': '0 8px 24px -4px rgba(0, 102, 255, 0.35)',
+            'floating-glass': '0 12px 36px -6px rgba(15, 23, 42, 0.08), 0 4px 12px rgba(15, 23, 42, 0.03)',
+            'card-luxury': '0 20px 48px -12px rgba(15, 23, 42, 0.12), 0 2px 6px rgba(15, 23, 42, 0.04)',
+            'pin-elevation': '0 10px 25px -3px rgba(0, 0, 0, 0.18)',
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    @layer base {
+      html, body {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        font-family: 'IBM Plex Sans Arabic', sans-serif;
+        background-color: #f8fafd;
+        color: #0f172a;
+        -webkit-tap-highlight-color: transparent;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+      .pb-safe { padding-bottom: env(safe-area-inset-bottom, 16px); }
+      .pt-safe { padding-top: env(safe-area-inset-top, 16px); }
+    }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    
+    @keyframes subtle-pulse {
+      0%, 100% { transform: scale(1); opacity: 0.35; }
+      50% { transform: scale(1.4); opacity: 0.05; }
+    }
+    .animate-gps-beacon {
+      animation: subtle-pulse 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    @keyframes pin-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+    .animate-float {
+      animation: pin-float 3s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col antialiased select-none overflow-x-hidden">
+<!-- Main Exploration Container -->
+<main class="relative w-full h-[100dvh] overflow-hidden flex flex-col justify-between">
+<!-- LAYER 1: Ultra-Modern Stylized Vector Map Canvas -->
+<div class="absolute inset-0 z-0 bg-[#eef3f9]">
+<svg class="w-full h-full object-cover" preserveaspectratio="xMidYMid slice" viewbox="0 0 412 892" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<!-- Soft Modern Shading & Patterns -->
+<lineargradient id="roadPrimaryGrad" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#ffffff"></stop>
+<stop offset="100%" stop-color="#f8fafc"></stop>
+</lineargradient>
+<lineargradient id="kingFahdGrad" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#ffeed4"></stop>
+<stop offset="50%" stop-color="#ffe2b5"></stop>
+<stop offset="100%" stop-color="#ffd899"></stop>
+</lineargradient>
+<lineargradient id="waterGrad" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#d6edff"></stop>
+<stop offset="100%" stop-color="#bfe4ff"></stop>
+</lineargradient>
+<!-- Apple Maps style city block grid pattern -->
+<pattern height="36" id="urbanMesh" patternunits="userSpaceOnUse" width="36">
+<rect fill="#f1f5fa" height="36" width="36"></rect>
+<rect fill="#e9eff7" height="32" opacity="0.6" rx="4" width="32" x="2" y="2"></rect>
+</pattern>
+</defs>
+<!-- Base Urban Fabric -->
+<rect fill="url(#urbanMesh)" height="100%" width="100%"></rect>
+<!-- Organic Green Parks (Diplomatic Quarter / Riyadh Greenery vibe) -->
+<path d="M-40,190 Q50,150 110,210 T160,330 T30,420 Z" fill="#ddf6e8" opacity="0.85"></path>
+<path d="M270,440 Q350,380 430,460 T440,660 T290,610 Z" fill="#ddf6e8" opacity="0.85"></path>
+<path d="M190,50 Q280,30 330,80 T260,170 Z" fill="url(#waterGrad)" opacity="0.65"></path>
+<!-- Secondary Urban Road Network -->
+<g opacity="0.95" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round">
+<line stroke-width="4.5" x1="-30" x2="450" y1="120" y2="135"></line>
+<line stroke-width="5" x1="-30" x2="450" y1="280" y2="310"></line>
+<line stroke-width="5" x1="-30" x2="450" y1="460" y2="440"></line>
+<line stroke-width="4" x1="-30" x2="450" y1="620" y2="640"></line>
+<line stroke-width="5" x1="80" x2="100" y1="-20" y2="920"></line>
+<line stroke-width="5.5" x1="175" x2="155" y1="-20" y2="920"></line>
+<line stroke-width="4.5" x1="260" x2="285" y1="-20" y2="920"></line>
+<line stroke-width="5" x1="345" x2="365" y1="-20" y2="920"></line>
+<!-- Diagonal Connectors -->
+<path d="M-10,50 L200,280 L320,270 L440,400" fill="none" stroke="#ffffff" stroke-width="4"></path>
+<path d="M20,680 L210,510 L310,590" fill="none" stroke="#ffffff" stroke-width="4"></path>
+</g>
+<!-- Primary Arterial: Makkah Al-Mukarramah Highway -->
+<path d="M-30,370 C120,340 230,410 440,360" fill="none" opacity="0.45" stroke="#fed7aa" stroke-width="12"></path>
+<path d="M-30,370 C120,340 230,410 440,360" fill="none" stroke="#ffffff" stroke-width="8"></path>
+<path d="M-30,370 C120,340 230,410 440,360" fill="none" opacity="0.8" stroke="#10b981" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- Flagship Highway: King Fahd Expressway (Golden Arterial with Active Pulse) -->
+<path d="M136,-20 L136,920" fill="none" opacity="0.3" stroke="#fcd34d" stroke-width="14"></path>
+<path d="M136,-20 L136,920" fill="none" stroke="url(#kingFahdGrad)" stroke-width="8.5"></path>
+<path d="M136,-20 L136,920" fill="none" opacity="0.75" stroke="#0066ff" stroke-dasharray="10 16" stroke-width="2"></path>
+</svg>
+<!-- ================= MAP MARKERS (WORLD-CLASS POIS) ================= -->
+<!-- POI 1: Al Rajhi Mosque -->
+<div class="absolute top-[225px] right-[95px] flex flex-col items-center cursor-pointer group transition-transform hover:scale-105 active:scale-95">
+<div class="bg-white/95 backdrop-blur-md px-2.5 py-0.5 rounded-full shadow-sm border border-slate-200/60 flex items-center gap-1.5 mb-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+<span class="text-[11px] font-semibold text-slate-700">جامع الراجحي</span>
+</div>
+<div class="w-9 h-9 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-400 text-white flex items-center justify-center shadow-lg shadow-emerald-500/25 ring-2 ring-white">
+<span class="material-symbols-outlined text-[19px]">mosque</span>
+</div>
+</div>
+<!-- POI 2: Nahdi Pharmacy -->
+<div class="absolute top-[180px] left-[70px] flex flex-col items-center cursor-pointer group transition-transform hover:scale-105 active:scale-95">
+<div class="bg-white/95 backdrop-blur-md px-2.5 py-0.5 rounded-full shadow-sm border border-slate-200/60 flex items-center gap-1.5 mb-1.5">
+<span class="text-[11px] font-semibold text-slate-700">صيدلية النهدي</span>
+</div>
+<div class="w-8 h-8 rounded-2xl bg-gradient-to-tr from-amber-500 to-orange-400 text-white flex items-center justify-center shadow-md shadow-amber-500/25 ring-2 ring-white">
+<span class="material-symbols-outlined text-[17px]">local_pharmacy</span>
+</div>
+</div>
+<!-- POI 3: Gas Station -->
+<div class="absolute top-[385px] left-[45px] flex flex-col items-center cursor-pointer group transition-transform hover:scale-105 active:scale-95">
+<div class="w-8 h-8 rounded-2xl bg-gradient-to-tr from-rose-500 to-red-400 text-white flex items-center justify-center shadow-md shadow-rose-500/25 ring-2 ring-white">
+<span class="material-symbols-outlined text-[17px]">local_gas_station</span>
+</div>
+</div>
+<!-- POI 4: HERO DESTINATION -->
+<div class="absolute top-[280px] right-[178px] -translate-x-1/2 flex flex-col items-center cursor-pointer z-10 animate-float" id="featured-pin">
+<div class="bg-white/95 backdrop-blur-xl px-2.5 py-1 rounded-full shadow-floating-glass border border-slate-200/80 flex items-center gap-1.5 mb-1.5">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="text-[12px] font-bold text-slate-900">إكسير البن</span>
+<div class="flex items-center gap-0.5 bg-amber-50 text-amber-600 px-1.5 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[12px] text-amber-500 fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[11px] font-bold font-mono">4.8</span>
+</div>
+</div>
+<!-- 3D Electric Blue Pin Puck -->
+<div class="relative flex items-center justify-center">
+<span class="absolute w-14 h-14 rounded-full bg-primary/20 animate-ping"></span>
+<div class="relative w-12 h-12 rounded-[18px] bg-gradient-to-br from-primary via-blue-600 to-indigo-700 text-white flex items-center justify-center shadow-glow-primary ring-4 ring-white">
+<span class="material-symbols-outlined text-[24px]">local_cafe</span>
+</div>
+</div>
+<!-- Pointer Tip -->
+<div class="w-3 h-3 bg-indigo-700 rotate-45 -mt-1.5 rounded-sm shadow-sm ring-1 ring-white/50"></div>
+</div>
+<!-- POI 5: User Current Location -->
+<div class="absolute top-[480px] right-[150px] -translate-x-1/2 flex items-center justify-center z-10">
+<span class="absolute w-16 h-16 rounded-full bg-primary/20 animate-gps-beacon"></span>
+<span class="absolute w-9 h-9 rounded-full bg-primary/25"></span>
+<div class="absolute -top-4 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[14px] border-b-primary/40 filter blur-[0.5px]"></div>
+<div class="relative w-6 h-6 rounded-full bg-gradient-to-tr from-primary to-cyan-400 p-0.5 shadow-lg ring-2 ring-white flex items-center justify-center">
+<div class="w-2.5 h-2.5 rounded-full bg-white shadow-inner"></div>
+</div>
+</div>
+</div>
+<!-- LAYER 2: Floating Header, Search & Categories -->
+<header class="relative z-30 pt-safe px-4 flex flex-col gap-2.5 pointer-events-none">
+<!-- Top Bar -->
+<div class="pointer-events-auto h-13 px-4 py-2 flex items-center justify-between rounded-full bg-white/80 backdrop-blur-2xl shadow-floating-glass border border-white/90">
+<div class="flex items-center gap-3">
+<div class="relative">
+<img alt="User Avatar" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary/20" src="https://lh3.googleusercontent.com/aida/AEtjO1UUg886Mh52WBymgYFkP5ErXNNu2A0pcHgRyrkhceaxmige5vDHkeICOyqIAvVcPWUUwKt4kdK4ZqJIi5rfBH2-Hv4rJxpdmXywJs3ptkvXyMaKpOjztaaoLk5Qr7-g1dPRNzjx5vsIPE78zNm6rThlSckGBD9qDoDpwvGDKD5T91I6aWFm4q6aZ1TV565zqTrVM2RUdGcYb9zCT3pijHZA5bKNHDfMaqU-3p-4oNOFjY2WpqHmJbJEb5s"/>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-500 rounded-full ring-2 ring-white"></span>
+</div>
+<div class="flex flex-col text-right">
+<span class="text-[10px] font-medium text-slate-400 leading-none">بوصلة الاستكشاف</span>
+<div class="flex items-center gap-1">
+<h1 class="text-sm font-bold text-slate-900 tracking-tight">الرياض، المملكة</h1>
+<span class="material-symbols-outlined text-xs text-primary">expand_more</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<button aria-label="الإشعارات" class="w-9 h-9 flex items-center justify-center rounded-full bg-slate-100/80 text-slate-600 hover:text-primary hover:bg-primary-light active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[19px]">notifications</span>
+</button>
+</div>
+</div>
+<!-- Luxury Floating Search Capsule -->
+<div class="pointer-events-auto w-full bg-white/90 backdrop-blur-2xl rounded-2xl p-1.5 shadow-floating-glass border border-white flex items-center justify-between gap-2">
+<div class="flex items-center gap-2.5 flex-1 pr-2.5">
+<span class="material-symbols-outlined text-primary text-[22px]">search</span>
+<input class="w-full bg-transparent border-none outline-none text-slate-800 text-sm placeholder:text-slate-400 font-medium text-right focus:ring-0" placeholder="ابحث عن مكان، قهوة، أو عنوان..." type="text"/>
+</div>
+<div class="flex items-center gap-1.5 pl-1">
+<button aria-label="البحث الصوتي" class="w-8 h-8 rounded-xl bg-slate-100/90 hover:bg-slate-200/70 text-slate-600 flex items-center justify-center active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]">graphic_eq</span>
+</button>
+<button aria-label="تصفية النتائج" class="h-8 px-2.5 rounded-xl bg-primary text-white flex items-center gap-1 shadow-sm shadow-primary/20 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span class="text-xs font-semibold">تصفية</span>
+</button>
+</div>
+</div>
+<!-- Category Filter Chips -->
+<div class="pointer-events-auto flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5 px-0.5">
+<button class="flex items-center gap-1.5 h-9 px-4 rounded-full bg-slate-900 text-white text-xs font-semibold shrink-0 shadow-md shadow-slate-900/15 ring-1 ring-slate-800 active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">local_cafe</span>
+<span>مقاهي مختصة</span>
+</button>
+<button class="flex items-center gap-1.5 h-9 px-3.5 rounded-full bg-white/85 backdrop-blur-xl border border-white text-slate-700 text-xs font-semibold shrink-0 shadow-sm hover:bg-white active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px] text-amber-500">restaurant</span>
+<span>مطاعم</span>
+</button>
+<button class="flex items-center gap-1.5 h-9 px-3.5 rounded-full bg-white/85 backdrop-blur-xl border border-white text-slate-700 text-xs font-semibold shrink-0 shadow-sm hover:bg-white active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px] text-emerald-600">mosque</span>
+<span>مساجد</span>
+</button>
+<button class="flex items-center gap-1.5 h-9 px-3.5 rounded-full bg-white/85 backdrop-blur-xl border border-white text-slate-700 text-xs font-semibold shrink-0 shadow-sm hover:bg-white active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px] text-orange-500">local_gas_station</span>
+<span>وقود وطاقة</span>
+</button>
+<button class="flex items-center gap-1.5 h-9 px-3.5 rounded-full bg-white/85 backdrop-blur-xl border border-white text-slate-700 text-xs font-semibold shrink-0 shadow-sm hover:bg-white active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px] text-rose-500">local_pharmacy</span>
+<span>صيدليات</span>
+</button>
+</div>
+</header>
+<!-- LAYER 3: Ergonomic Floating Map Action Controls -->
+<div class="relative z-20 pointer-events-none px-4 flex justify-between items-end mb-2">
+<!-- Left Hand Group (Quick Tools) -->
+<div class="pointer-events-auto flex flex-col gap-2.5">
+<button aria-label="البوصلة واتجاه القبلة" class="w-11 h-11 rounded-2xl bg-white/90 backdrop-blur-xl text-slate-700 shadow-floating-glass border border-white flex items-center justify-center active:scale-90 transition-all hover:text-primary">
+<span class="material-symbols-outlined text-[20px] text-red-500">explore</span>
+</button>
+<button aria-label="طبقات الخريطة ثلاثية الأبعاد" class="w-11 h-11 rounded-2xl bg-white/90 backdrop-blur-xl text-slate-700 shadow-floating-glass border border-white flex items-center justify-center active:scale-90 transition-all hover:text-primary">
+<span class="material-symbols-outlined text-[20px]">layers</span>
+</button>
+<button aria-label="حالة المرور المباشرة" class="w-11 h-11 rounded-2xl bg-white/90 backdrop-blur-xl text-emerald-600 shadow-floating-glass border border-white flex items-center justify-center active:scale-90 transition-all">
+<span class="material-symbols-outlined text-[20px]">traffic</span>
+</button>
+</div>
+<!-- Right Hand Hero Thumb: Re-Center GPS -->
+<div class="pointer-events-auto">
+<button aria-label="تحديد موقعي بدقة" class="w-13 h-13 p-3 rounded-2xl bg-white/95 backdrop-blur-2xl text-primary shadow-floating-glass border border-white flex items-center justify-center active:scale-90 transition-all group" id="recenter-btn">
+<span class="material-symbols-outlined text-[24px] group-hover:scale-110 transition-transform">my_location</span>
+</button>
+</div>
+</div>
+<!-- LAYER 4: World-Class Floating Bottom Sheet (Suggested Destination Card) -->
+<div class="relative z-30 px-3 pb-24">
+<div class="w-full bg-white/95 backdrop-blur-2xl rounded-3xl p-4 shadow-card-luxury border border-white/90 flex flex-col gap-3.5 transition-all">
+<!-- Sheet Handle Drag Bar -->
+<div class="w-full flex justify-center -mt-1">
+<div class="w-10 h-1.5 rounded-full bg-slate-200"></div>
+</div>
+<!-- Upper Row: Status Badges -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-50/80 border border-blue-100 text-primary">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="text-xs font-bold">وجهة مميزة وموصى بها</span>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="text-xs font-semibold">مفتوح الآن حتى 12:00 ص</span>
+</div>
+</div>
+<!-- Place Core Info + Visual Artwork Thumbnail -->
+<div class="flex items-start justify-between gap-3">
+<div class="flex flex-col gap-1 flex-1">
+<h2 class="text-lg font-bold text-slate-900 leading-tight">مقهى ومحمصة إكسير البن</h2>
+<p class="text-xs font-normal text-slate-500 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-slate-400">location_on</span>
+              طريق أنس بن مالك، حي النرجس • قهوة مختصة وحلويات
+            </p>
+</div>
+<div class="w-16 h-16 rounded-2xl overflow-hidden shrink-0 shadow-sm border border-slate-100 relative group">
+<img alt="إكسير البن" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoEQhkILki99dFqFGrcy1Y7uRXWVNT3oe_iV4gurj1kYg7R1qq9Y9dRRArn83lHwwwAeXonFmTmBxK9dLQdKdaSOHH929B-u9QHyiYu3dicWsezwE7-pju9HYaQLpcBIcqG990mNd2FxAFj-9JrSksUncyBsZBnG60aQRMEEX0NcWbVwZtg6cEo7waSedcxx89ZXC2BDIUEBC8HZTr9EEVDfKcDeyxeScmJ6y-V9nMYua80BQz692f"/>
+</div>
+</div>
+<!-- Telemetry Info Row -->
+<div class="flex items-center justify-between py-2 px-3 rounded-2xl bg-slate-50/90 border border-slate-100">
+<div class="flex items-center gap-1.5">
+<div class="flex items-center text-amber-500">
+<span class="material-symbols-outlined text-[16px] fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="text-xs font-bold text-slate-900 font-mono">4.8</span>
+<span class="text-[11px] text-slate-400 font-medium">(320+ تقييم)</span>
+</div>
+<span class="text-slate-300">|</span>
+<div class="flex items-center gap-1 text-slate-600 text-xs font-medium">
+<span class="material-symbols-outlined text-[16px] text-slate-400">near_me</span>
+<span>1.2 كم</span>
+</div>
+<span class="text-slate-300">|</span>
+<div class="flex items-center gap-1 text-emerald-600 text-xs font-bold">
+<span class="material-symbols-outlined text-[16px]">directions_car</span>
+<span>4 دقائق</span>
+</div>
+</div>
+<!-- Action Buttons Pair -->
+<div class="flex items-center gap-2 pt-0.5">
+<button class="flex-1 h-12 rounded-2xl bg-gradient-to-r from-primary to-blue-600 text-white flex items-center justify-center gap-2 text-sm font-bold shadow-glow-primary hover:from-primary-hover hover:to-blue-700 active:scale-[0.98] transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]">directions</span>
+<span>الاتجاهات والمسار</span>
+</button>
+<button aria-label="حفظ المكان" class="w-12 h-12 rounded-2xl bg-slate-100/90 text-slate-700 flex items-center justify-center hover:bg-slate-200 active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]">bookmark_border</span>
+</button>
+<button aria-label="مشاركة المكان" class="w-12 h-12 rounded-2xl bg-slate-100/90 text-slate-700 flex items-center justify-center hover:bg-slate-200 active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- LAYER 5: Ultra-Sleek Modern Floating Dock (Bottom Navigation) -->
+<nav class="fixed bottom-0 inset-x-0 z-40 pb-safe pointer-events-none" data-active-classes="text-primary font-bold">
+<div class="pointer-events-auto mx-4 mb-2 bg-white/90 backdrop-blur-2xl rounded-full px-4 py-1.5 shadow-floating-glass border border-white/90">
+<div class="flex justify-around items-center h-14">
+<a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] h-12 text-primary font-bold transition-all relative group" data-path="explore" href="#">
+<span class="material-symbols-outlined text-[22px] group-hover:scale-110 transition-transform">explore</span>
+<span class="text-[11px] mt-0.5">استكشاف</span>
+<span class="absolute -bottom-1 w-1.5 h-1.5 rounded-full bg-primary"></span>
+</a>
+<a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-slate-400 hover:text-slate-800 transition-all group" data-path="routes" href="#">
+<span class="material-symbols-outlined text-[22px] group-hover:scale-110 transition-transform">alt_route</span>
+<span class="text-[11px] font-medium mt-0.5">المسارات</span>
+</a>
+<a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-slate-400 hover:text-slate-800 transition-all group" data-path="saved-places" href="#">
+<span class="material-symbols-outlined text-[22px] group-hover:scale-110 transition-transform">bookmark</span>
+<span class="text-[11px] font-medium mt-0.5">المحفوظات</span>
+</a>
+<a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-slate-400 hover:text-slate-800 transition-all group" data-path="profile" href="#">
+<span class="material-symbols-outlined text-[22px] group-hover:scale-110 transition-transform">account_circle</span>
+<span class="text-[11px] font-medium mt-0.5">حسابي</span>
+</a>
+</div>
+</div>
+</nav>
+<script>
+    // Smooth Micro-Interaction on GPS Recenter
+    document.getElementById('recenter-btn')?.addEventListener('click', function() {
+      this.classList.add('scale-110', 'ring-4', 'ring-primary/20');
+      setTimeout(() => {
+        this.classList.remove('scale-110', 'ring-4', 'ring-primary/20');
+      }, 250);
+    });
+  </script>
+</body></html>
